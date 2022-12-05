@@ -1,0 +1,60 @@
+﻿<Page x:Class="FastType_Koshevoi_Chernenkov.View.Pages.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FastType_Koshevoi_Chernenkov.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="1244"
+      Title="RegistrationPage">
+
+    <Grid Background="#3bb5f6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Регистрация"
+                   Foreground="White"
+                   FontSize="48"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            
+            <TextBlock Grid.Row="2"
+                Text="Уже есть регистрация?"
+                       FontSize="24"
+                       Foreground="White"/>
+
+            <TextBlock>
+                <Hyperlink FontSize="24"
+                           NavigateUri="View/Pages/LoginPage.xaml">
+                    Войти
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
+        <TextBox Name="NameTb"
+                     Grid.Row="2"
+                 Margin="20 40 1100 40"/>
+
+        <TextBox Name="EmailTb"
+                     Grid.Row="3"
+                 Margin="20 40 1100 40"/>
+
+        <PasswordBox Name="PasswordBb"
+                         Grid.Row="4"
+                     Margin="20 40 1100 40"/>
+
+        <Button Name="RegistrationBtn"
+                Content="Зарегистрироваться"
+                Grid.Row="5"
+                Click="RegistrationBtn_Click"
+                Style="{StaticResource AcceptButton}"
+                VerticalAlignment="Center"/>
+
+    </Grid>
+</Page>

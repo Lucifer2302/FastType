@@ -1,0 +1,142 @@
+﻿<Page x:Class="FastType_Koshevoi_Chernenkov.View.Pages.TrainerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FastType_Koshevoi_Chernenkov.View.Pages"
+      mc:Ignorable="d" 
+d:DesignHeight="750" d:DesignWidth="1244"
+Title="TrainerPage">
+
+    <Grid Background="#55c5ff">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+
+        <!--#Region text и поле для ввода-->
+        <TextBox Name="InputLineTb"
+                 CaretIndex="0"
+                 IsReadOnly="True"
+                 IsReadOnlyCaretVisible="True"
+         Text="напечатай этот текст и узнай свою скорость печати"
+                 PreviewKeyUp="InputLineTb_PreviewKeyUp"
+                 PreviewKeyDown="InputLineTb_PreviewKeyDown"
+                 PreviewTextInput="InputLineTb_PreviewTextInput"/>
+
+        <TextBox Name="FakeInputLineTb"
+                 IsHitTestVisible="False"
+                 Background="Transparent"
+                 Foreground="#acacac"
+                 Text="напечатай этот текст и узнай свою скорость печати"/>
+        
+        <!--endregion-->
+
+
+
+        <!--#Region клавиатура-->
+        <Border Grid.Row="1"
+        CornerRadius="10"
+        BorderThickness="2">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#49a9db" Offset="1"/>
+                    <GradientStop Color="#7acffb" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#4cb7ef" Offset="1"/>
+                    <GradientStop Color="#4cbefa" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+
+            <Grid Name="GridKeyboard"
+HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="Oem3" Content="ё" Style="{DynamicResource LightBlueKeybordKey}"/>
+                    <Button Name="D1" Content="1" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="D2" Content="2" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="D3" Content="3" Style="{DynamicResource BlueKeybordKey}"/>
+                    <Button Name="D4" Content="4" Style="{DynamicResource PurpleKeybordKey}"/>
+                    <Button Name="D5" Content="5" Style="{DynamicResource OrangeKeybordKey}"/>
+                    <Button Name="D6" Content="6" Style="{DynamicResource OrangeKeybordKey}"/>
+                    <Button Name="D7" Content="7" Style="{DynamicResource YellowKeybordKey}"/>
+                    <Button Name="D8" Content="8" Style="{DynamicResource PurpleKeybordKey}"/>
+                    <Button Name="D9" Content="9" Style="{DynamicResource BlueKeybordKey}"/>
+                    <Button Name="D0" Content="0" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="OemMinus" Content="-" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="OemPlus" Content="=" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="Back" Content="Backspace" Width="110" FontSize="20" Style="{DynamicResource LightBlueKeybordKey}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Button Name="Tab" HorizontalContentAlignment="Left" Content="Tab" Width="110" Style="{DynamicResource LightBlueKeybordKey}"/>
+                    <Button Name="Q" Content="й" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="W" Content="ц" Style="{DynamicResource BlueKeybordKey}"/>
+                    <Button Name="E" Content="у" Style="{DynamicResource PurpleKeybordKey}"/>
+                    <Button Name="R" Content="к" Style="{DynamicResource OrangeKeybordKey}"/>
+                    <Button Name="T" Content="е" Style="{DynamicResource OrangeKeybordKey}"/>
+                    <Button Name="Y" Content="н" Style="{DynamicResource YellowKeybordKey}"/>
+                    <Button Name="U" Content="г" Style="{DynamicResource YellowKeybordKey}"/>
+                    <Button Name="I" Content="ш" Style="{DynamicResource PurpleKeybordKey}"/>
+                    <Button Name="O" Content="щ" Style="{DynamicResource BlueKeybordKey}"/>
+                    <Button Name="P" Content="з" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="OemOpenBrackets" Content="х" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="Oem6" Content="ъ" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="Oem5" Content="\" Style="{DynamicResource LightBlueKeybordKey}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <Button Name="Capital" Content="Caps Lock" Width="130" Style="{DynamicResource LightBlueKeybordKey}"/>
+                    <Button Name="A" Content="ф" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="S" Content="ы" Style="{DynamicResource BlueKeybordKey}"/>
+                    <Button Name="D" Content="в" Style="{DynamicResource PurpleKeybordKey}"/>
+                    <Button Name="F" Content="а" Style="{DynamicResource OrangeKeybordKey}"/>
+                    <Button Name="G" Content="п" Style="{DynamicResource OrangeKeybordKey}"/>
+                    <Button Name="H" Content="р" Style="{DynamicResource YellowKeybordKey}"/>
+                    <Button Name="J" Content="о" Style="{DynamicResource YellowKeybordKey}"/>
+                    <Button Name="K" Content="л" Style="{DynamicResource PurpleKeybordKey}"/>
+                    <Button Name="L" Content="д" Style="{DynamicResource BlueKeybordKey}"/>
+                    <Button Name="Oem1" Content="ж" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="OemQuotes" Content="э" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="Return" Content="Enter" Width="120" Style="{DynamicResource LightBlueKeybordKey}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <Button Name="LeftShift" Content="Shift" Width="162" Style="{DynamicResource LightBlueKeybordKey}"/>
+                    <Button Name="Z" Content="я" Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="X" Content="ч" Style="{DynamicResource BlueKeybordKey}"/>
+                    <Button Name="C"
+Content="с" Style="{DynamicResource PurpleKeybordKey}"/>
+                    <Button Name="V" Content="м" Style="{DynamicResource OrangeKeybordKey}"/>
+                    <Button Name="B" Content="и" Style="{DynamicResource OrangeKeybordKey}"/>
+                    <Button Name="N" Content="т" Style="{DynamicResource YellowKeybordKey}"/>
+                    <Button Name="M" Content="ь" Style="{DynamicResource YellowKeybordKey}"/>
+                    <Button Name="OemComma" Content="б" Style="{DynamicResource PurpleKeybordKey}"/>
+                    <Button Name="OemPeriod" Content="ю" Style="{DynamicResource BlueKeybordKey}"/>
+                    <Button Name="OemQuestion" Content="." Style="{DynamicResource GreenKeybordKey}"/>
+                    <Button Name="RightShift" Content="Shift" Width="162" Style="{DynamicResource LightBlueKeybordKey}"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Grid.Row="4" Orientation="Horizontal">
+                    <Button Name="Space" Content="Space" Width="590" Style="{DynamicResource LightBlueKeybordKey}"/>
+                </StackPanel>
+            </Grid>
+
+        </Border>
+        <!--endregion-->
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,104 @@
+﻿<Page x:Class="FastType_Koshevoi_Chernenkov.View.Pages.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FastType_Koshevoi_Chernenkov.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="1244"
+      Title="ProfilePage">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.6*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="/Resources/Icons/userpic.jpg" Grid.RowSpan="2" Margin="40"/>
+
+
+        <TextBlock Text="Имя пользователя" 
+                   FontSize="40"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2" />
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Image Source="/Resources/Icons/progress-profile.png" Margin="0 0 0 40"/>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Прогресс" FontSize="25"/>
+                <TextBlock Text="2 урока" FontSize="25"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Horizontal">
+            <Image Source="/Resources/Icons/accuracy-profile.png" Margin="0 0 0 40"/>
+
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Точность" FontSize="25"/>
+                <TextBlock Text="0 %" FontSize="25"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+            <Image Source="/Resources/Icons/speed-profile.png" Margin="0 0 0 40" />
+
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Скорость" FontSize="25"/>
+                <TextBlock Text="0 зн./мин" FontSize="25"/>
+            </StackPanel>
+        </StackPanel>
+
+
+        <TabControl Grid.Row="2" Grid.ColumnSpan="4">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="#cacaca">Результаты обучения</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                
+                <StackPanel>
+                    <TextBlock>Скорость печати Точность Дата/Время</TextBlock>
+                </StackPanel>
+            </TabItem>
+            
+            <TabItem Header="Результаты тестов" Foreground="#FF36BDC3">
+                <TextBlock Text="{Binding ElementName=textBox1, Path=Text}"/>
+                
+            </TabItem>
+        </TabControl>
+
+        <TextBlock Text="Ты сейчас проходишь урок"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center"
+                   FontSize="25"/>
+
+        <TextBlock Text="2 из 19"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center"
+                   FontSize="25"
+                   Margin="0 100 0 0"/>
+
+        <Button Content="Продолжить"
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource AcceptButton}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0 200 0 0"/>
+    </Grid>
+</Page>
